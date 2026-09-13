@@ -574,5 +574,23 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 23,
+      name: '分段广告-视频页"屏蔽广告"弹窗',
+      desc: '点击[不想看该内容]',
+      fastQuery: true,
+      activityIds: [
+        'com.bilibili.ship.theseus.detail.UnitedBizDetailsActivity',
+        '.MainActivityV2',
+      ],
+      rules: [
+        {
+          key: 0,
+          // vid="reason1_layout" 在弹窗中被多个选项复用，必须叠加 text 区分
+          matches:
+            '@[vid="reason1_layout"] > [text="不想看该内容"][visibleToUser=true]',
+        },
+      ],
+    },
   ],
 });
